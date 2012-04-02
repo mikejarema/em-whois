@@ -13,7 +13,14 @@ module Whois
           # This is for internal use only!
           #
           # @api internal
-          def ask_the_socket(query, *args)
+          
+          alias :orig_ask_the_socket :ask_the_socket
+
+          def ask_the_socket(*args)
+            defined?(EM) && EM.reactor_running? ? em_ask_the_socket(*args) : orig_ask_the_socket(*args)
+          end # ask_the_socket
+
+          def em_ask_the_socket(query, *args)
             client = EventMachine::Synchrony::TCPSocket.new(*args)
             client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
                                             # but write/read is more symmetric than puts/read
@@ -37,7 +44,7 @@ module Whois
           ensure
             client.close if client          # If != client something went wrong.
           
-          end # ask_the_socket
+          end # em_ask_the_socket
 
       end
     end
