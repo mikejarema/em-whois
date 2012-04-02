@@ -8,6 +8,22 @@ lookups.
 inside the reactor, and fallback to original sockets outside the reactor context.
 
 
+## Examples
+
+Simple example to grab whois info within the EventMachine loop:
+
+```ruby
+EM.synchrony do  
+  
+  # Async domain availability lookup via WHOIS info
+  whois = Whois.whois(ARGV[0] || "github.com")
+  puts whois.properties[:available?] ? "Domain Available" : "Domain Taken"
+
+  EM.stop
+end
+```
+
+
 ## TODO
 
 * More elegant approach to reading from the EM::Synchrony::TcpSocket in Whois::Server::Adapters::Base#ask_the_socket

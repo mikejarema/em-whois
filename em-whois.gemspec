@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{em-whois}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mike Jarema"]
@@ -11,7 +11,16 @@ Gem::Specification.new do |s|
   s.email = %q{mike@jarema.com}
   s.files = [
     "VERSION.yml",
-    "README.md"
+    "README.md",
+    ".rspec",
+    "Gemfile",
+    "Gemfile.lock",
+    "Rakefile",
+    "examples/async_whois.rb",
+    "examples/sync_whois.rb",
+    "lib/em-whois.rb",
+    "spec/em-whois_spec.rb",
+    "spec/helper/all.rb",
   ]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/mikejarema/em-whois}
