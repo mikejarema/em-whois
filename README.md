@@ -1,4 +1,4 @@
-# em-whois
+# em-whois &nbsp;&nbsp;&nbsp; <div style="float:right">[![Build Status](https://secure.travis-ci.org/mikejarema/em-whois.png)](http://travis-ci.org/mikejarema/em-whois)</div>
 
 This is a container for the synchronous WHOIS gem which replaces socket communications
 with the EventMachine equivalent.  The result is a gem permitting asynchronous WHOIS
