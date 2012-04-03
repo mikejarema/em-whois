@@ -1,11 +1,11 @@
 language: ruby
 rvm:
-  - 1.8.7
+  # - 1.8.7 # Doesn't support Fibers, uncomment if/when em-synchrony is no longer used
   - 1.9.2
   - 1.9.3
-  - jruby-18mode # JRuby in 1.8 mode
-  - jruby-19mode # JRuby in 1.9 mode
-  - rbx-18mode
+  # - jruby-18mode # JRuby in 1.8 mode, doesn't support Fibers, uncomment if/when em-synchrony is no longer used
+  # - jruby-19mode # JRuby in 1.9 mode, undefined method `get_outbound_data_size' (EventMachine::Synchrony::TCPSocket)
+  # - rbx-18mode # Doesn't support Fibers, uncomment if/when em-synchrony is no longer used
   - rbx-19mode
 # uncomment this line if your project needs to run something other than `rake`:
 # script: bundle exec rspec spec
