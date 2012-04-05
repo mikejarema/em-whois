@@ -12,9 +12,7 @@ inside the reactor, and fallback to original sockets outside the reactor context
 
 Tested and used in production with MRI 1.9+.
 
-`em-whois` relies on `em-synchrony` imposing a 1.9+ requirement.
-
-I'm seeing failures within JRuby on ``EM::Synchrony::TcpSocket``, so I wouldn't recommend using it in a JRuby environment just yet.
+`em-whois` relies on Ruby Fibers and `em-synchrony`, imposing a 1.9+ requirement.
 
 
 ## Examples
@@ -37,8 +35,7 @@ Also take a look at `examples/async_whois.rb`.
 
 ## TODO
 
-* More elegant approach to reading from the ``EM::Synchrony::TcpSocket`` in ``Whois::Server::Adapters::Base#ask_the_socket``
-* Support for ruby 1.8 (use ``EM::connect`` rather than ``EM::Synchrony::TcpSocket``)
+* Support for ruby 1.8 (remove em-synchrony/Fiber requirement)
 
 
 ## License & Notes
