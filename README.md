@@ -33,11 +33,6 @@ end
 Also take a look at `examples/async_whois.rb`.
 
 
-## TODO
-
-* Support for ruby 1.8 (remove em-synchrony/Fiber requirement)
-
-
 ## License & Notes
 
 The MIT License - Copyright (c) 2012 [Mike Jarema](http://mikejarema.com)
