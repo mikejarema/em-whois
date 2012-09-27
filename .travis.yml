@@ -6,4 +6,4 @@ rvm:
   - rbx-19mode
   - ruby-head
   - jruby-head
-  - ree
+before_install: gem install bundler
