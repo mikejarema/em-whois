@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{em-whois}
-  s.version = "0.3.0"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mike Jarema"]
@@ -40,13 +40,13 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<em-synchrony>, [">= 0"])
-      s.add_runtime_dependency(%q<whois>, ["= 2.7.0"])
+      s.add_runtime_dependency(%q<whois>, ["= 4.0.6"])
     else
       s.add_dependency(%q<em-synchrony>, [">= 0"])
-      s.add_dependency(%q<whois>, ["= 2.7.0"])
+      s.add_dependency(%q<whois>, ["= 4.0.6"])
     end
   else
     s.add_dependency(%q<em-synchrony>, [">= 0"])
-    s.add_dependency(%q<whois>, ["= 2.7.0"])
+    s.add_dependency(%q<whois>, ["= 4.0.6"])
   end
 end
