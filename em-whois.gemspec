@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
     "spec/em-whois_spec.rb",
     "spec/helper/all.rb",
   ]
+  s.required_ruby_version = Gem::Requirement.new(">= 2.0.0".freeze)
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
