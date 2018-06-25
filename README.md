@@ -10,9 +10,7 @@ inside the reactor, and fallback to original sockets outside the reactor context
 
 ## Supported Ruby Versions
 
-Tested and used in production with MRI 1.9+.
-
-`em-whois` relies on Ruby Fibers and `em-synchrony`, imposing a 1.9+ requirement.
+`em-whois` requires ruby 2.0+, with which it has been tested and used in production.
 
 
 ## Examples
@@ -21,16 +19,16 @@ Simple example to check domain availability via WHOIS within the EventMachine lo
 
 ```ruby
 require 'em-whois'
+require 'whois-parser'
 
-EM.synchrony do  
+EM.synchrony do
   whois = Whois.whois(ARGV[0] || "github.com")
-  puts whois.properties[:available?] ? "Domain Available" : "Domain Taken"
-
+  puts whois.parser.available? ? "Domain Available" : "Domain Taken"
   EM.stop
 end
 ```
 
-Also take a look at `examples/async_whois.rb`.
+Also take a look at the async examples in `examples/`.
 
 
 ## License & Notes

@@ -1,13 +1,13 @@
 $: << File.dirname(__FILE__) + '/../lib'
 require 'em-whois'
-require 'atomic'
+require 'whois-parser'
 
 # Asynchronous, parallel multi-domain WHOIS lookup
 domains = ARGV.empty? ? ["github.com", "google.com", "bing.com", "yahoo.com", "mikejarema.com"] : ARGV
 whois   = {}
 
-EM.synchrony do  
-  
+EM.synchrony do
+
   # Progress indicator
   EM.add_periodic_timer(0.1) do
     STDERR.print "."
@@ -18,10 +18,10 @@ EM.synchrony do
     if domains.size == whois.keys.size
       puts ""
       whois.each do |k,v|
-        if v.properties[:available?]
+        if v.parser.available?
           puts "#{k}: available"
         else
-          puts "#{k}: taken, expires #{v.properties[:expires_on]}"
+          puts "#{k}: taken, expires #{v.parser.expires_on}"
         end
       end
 
