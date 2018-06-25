@@ -1,9 +1,10 @@
-source :gemcutter
+source 'https://rubygems.org'
 
 gem 'em-synchrony'
-gem 'whois', '= 2.7.0'    # Locked to specific version as internals of whois gem are overridden
+gem 'whois', '= 4.0.6'    # Locked to specific version as internals of whois gem are overridden
 
-group :development do
+group :test do
   gem 'rake'
   gem 'rspec'
+  gem 'whois-parser', '= 1.1.0'
 end
